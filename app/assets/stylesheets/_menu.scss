@@ -1,0 +1,44 @@
+.wrapper {
+  .side {
+    width: 300px;
+    height: 100vh;
+    float: left;
+    color: $white;
+
+    .side__top {
+      height: 100px;
+      background-color: $more_dark_blue;
+      padding: 0 20px;
+      line-height: 100px;
+
+      .side__top__user-name {
+        float: left;
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .side__top__icons {
+        float: right;
+      }
+    }
+
+    .side__bottom {
+      height: calc(100vh - 100px);
+      background-color: $less_dark_blue;
+      padding: 0 20px;
+      overflow: scroll;
+      width: 260px;
+
+      .side__bottom__group {
+        .side__bottom__group-name {
+          padding: 20px 0px 5px ;
+          font-size: 15px;
+        }
+
+        .side__bottom__group-message {
+          font-size: 11px;
+        }
+      }
+    }
+  }
+}
