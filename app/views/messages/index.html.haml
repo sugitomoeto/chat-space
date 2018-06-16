@@ -3,11 +3,17 @@
     .side__top
       %h4.side__top__user-name
         モーモ
+      .side__top__icons
+        = link_to do
+          = fa_icon 'edit', class: 'icon'
+
+        =link_to do
+          = fa_icon 'cog', class: 'icon'
 
     .side__bottom
       .side__bottom__group
         .side__bottom__group-name
-          もーもーグループ
+          もーもー小隊
 
         .side__bottom__group-message
           まだメッセージはありません。
@@ -16,17 +22,28 @@
     .main__top
       .main__top__left
         .main__top__left__group-name
-          もーもーグループ
+          もーもー小隊
         .main__top__left__members
-          members: モーモ
+          Members: モーモ
       .main__top__right
-        edit
+        = link_to 'Edit', class: "group-edit"
+
+    .main__middle
+      .main__middle__messages
+        .main__middle__user-name
+          モーモ
+        .main__middle__posted-time
+          2018/06/13/ 00:00:00
+        .main__middle__content
+          ンモンモンモンモンモ
 
     .main__bottom
-      .main__bottom__messages
-        .main__bottom__user-name
-          モーモ
-        .main__bottom__posted-time
-          2018/06/13/ 00:00:00
-        .main__bottom__content
-          ンモンモンモンモンモ
+      .main__bottom__form
+        .main__bottom__form__text
+          = text_field :message, :text, :placeholder => "type a message", :class => "text"
+        %label.main__bottom__form__image
+          = fa_icon("image")
+          %input{type: "file", :id => "file"}
+
+      .main__bottom__send
+        %input{:type => "submit", :value => "Send", :class => "main__bottom__send"}
