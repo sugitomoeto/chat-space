@@ -5,19 +5,19 @@
     float: left;
     color: $white;
 
-    .side__top {
+    &__top {
       height: 100px;
       background-color: $more_dark_blue;
       padding: 0 20px;
       line-height: 100px;
 
-      .side__top__user-name {
+      &__user-name {
         float: left;
         font-size: 16px;
         font-weight: bold;
       }
 
-      .side__top__icons {
+      &__icons {
         float: right;
         a {
           color: $white;
@@ -26,20 +26,20 @@
       }
     }
 
-    .side__bottom {
+    &__bottom {
       height: calc(100vh - 100px);
       background-color: $less_dark_blue;
       padding: 0 20px;
       overflow: scroll;
       width: 260px;
 
-      .side__bottom__group {
-        .side__bottom__group-name {
+      &__group {
+        &-name {
           padding: 20px 0px 5px ;
           font-size: 15px;
         }
 
-        .side__bottom__group-message {
+        &-message {
           font-size: 11px;
         }
       }

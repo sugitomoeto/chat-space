@@ -4,28 +4,28 @@
     height: 100vh;
     float: right;
 
-    .main__top {
+    &__top {
       height: 100px;
       border-bottom: thin solid $light_gray;
       background-color: $white;
       padding: 0 40px;
 
-      .main__top__left {
+      &__left {
         @include clearfix;
         float: left;
 
-        .main__top__left__group-name {
+        &__group-name {
           padding: 30px 0 10px ;
           font-size: 20px;
           color: $black;
         }
-        .main__top__left__members {
+        &__members {
           font-size: 12px;
           color: $gray;
         }
       }
 
-      .main__top__right {
+      &__right {
         float: right;
         @include clearfix;
 
@@ -41,29 +41,29 @@
       }
     }
 
-    .main__middle {
+    &__middle {
       height: calc(100vh - 100px - 90px - 46px);
       padding: 46px 40px 0;
       overflow: scroll;
 
-      .main__middle__messages {
+      &__messages {
         padding-bottom: 46px;
 
-        .main__middle__user-name {
+        &__user-name {
           font-size: 16px;
           color: $deep_blue;
           font-weight: bold;
           float: left;
         }
 
-        .main__middle__posted-time {
+        &__posted-time {
           margin-left: 10px;
           color: $gray;
           font-size: 12px;
           float: left;
         }
 
-        .main__middle__content {
+        &__content {
           font-size: 14px;
           color: $deep_blue;
           clear: both;
@@ -72,18 +72,18 @@
       }
     }
 
-    .main__bottom {
+    &__bottom {
       background-color: $pale_gray;
       padding: 18px 35px 17px ;
       @include clearfix();
       font-size: 16px;
       color: $deep_blue;
 
-      .main__bottom__form {
+      &__form {
         line-height: 50px;
         float: left;
 
-        .main__bottom__form__text {
+        &__text {
           .text {
             width: 920px;
             height: 50px;
@@ -93,7 +93,7 @@
           }
         }
 
-        .main__bottom__form__image {
+        &__image {
           float: right;
           position: absolute;
           right: 200px;
@@ -105,7 +105,7 @@
         }
       }
 
-      .main__bottom__send {
+      &__send {
         line-height: 50px;
         margin: 0 10px;
         padding: 0 10px;
