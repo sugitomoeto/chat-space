@@ -2,13 +2,13 @@
   = render 'side'
 
   .main
-    .main__top
-      .main__top__left
-        .main__top__left__group-name
+    .main__header
+      .main__header__left
+        .main__header__left__group-name
           もーもー小隊
-        .main__top__left__members
+        .main__header__left__members
           Members: モーモ
-      .main__top__right
+      .main__header__right
         = link_to 'Edit', class: "group-edit"
 
     .main__middle
@@ -23,10 +23,10 @@
     .main__bottom
       .main__bottom__form
         .main__bottom__form__text
-          = text_field :message, :text, :placeholder => "type a message", :class => "text"
+          = text_field :message, :text, placeholder: "type a message", class: "text"
         %label.main__bottom__form__image
           = fa_icon("image")
-          %input{type: "file", :id => "file"}
+          %input{type: "file", id: "file"}
 
       .main__bottom__send
-        %input{:type => "submit", :value => "Send", :class => "main__bottom__send"}
+        %input{type: "submit", value: "Send", class: "main__bottom__send"}
