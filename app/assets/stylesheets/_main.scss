@@ -1,0 +1,120 @@
+.wrapper{
+  .main {
+    width: calc(100vw - 300px);
+    height: 100vh;
+    float: right;
+
+    &__header {
+      height: 100px;
+      border-bottom: thin solid $light_gray;
+      background-color: $white;
+      padding: 0 40px;
+
+      &__left {
+        @include clearfix;
+        float: left;
+
+        &__group-name {
+          padding: 30px 0 10px ;
+          font-size: 20px;
+          color: $black;
+        }
+        &__members {
+          font-size: 12px;
+          color: $gray;
+        }
+      }
+
+      &__right {
+        float: right;
+        @include clearfix;
+
+        a {
+          line-height: 40px;
+          padding: 0 20px;
+          border: thin solid $light_blue;
+          color: $light_blue;
+          display: inline-block;
+          text-decoration: none;
+          margin-top: 28px;
+        }
+      }
+    }
+
+    &__middle {
+      height: calc(100vh - 100px - 90px - 46px);
+      padding: 46px 40px 0;
+      overflow: scroll;
+
+      &__messages {
+        padding-bottom: 46px;
+
+        &__user-name {
+          font-size: 16px;
+          color: $deep_blue;
+          font-weight: bold;
+          float: left;
+        }
+
+        &__posted-time {
+          margin-left: 10px;
+          color: $gray;
+          font-size: 12px;
+          float: left;
+        }
+
+        &__content {
+          font-size: 14px;
+          color: $deep_blue;
+          clear: both;
+          padding-top: 10px;
+        }
+      }
+    }
+
+    &__bottom {
+      background-color: $pale_gray;
+      padding: 18px 35px 17px ;
+      @include clearfix();
+      font-size: 16px;
+      color: $deep_blue;
+
+      &__form {
+        line-height: 50px;
+        float: left;
+
+        &__text {
+          .text {
+            width: 920px;
+            height: 50px;
+            float: left;
+            position: relative;
+            padding-left: 10px;
+          }
+        }
+
+        &__image {
+          float: right;
+          position: absolute;
+          right: 200px;
+          font-size: 20px;
+
+        #file {
+            display: none;
+          }
+        }
+      }
+
+      &__send {
+        line-height: 50px;
+        margin: 0 10px;
+        padding: 0 10px;
+        border: thin solid $light_blue;
+        color: $white;
+        background-color: $light_blue;
+        display: inline-block;
+        float: left;
+      }
+    }
+  }
+}
