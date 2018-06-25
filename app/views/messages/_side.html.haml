@@ -3,7 +3,7 @@
     %h4.side__header__user-name
       = current_user.name
     .side__header__icons
-      = link_to do
+      = link_to  new_group_path do
         = fa_icon 'edit', class: 'icon'
 
       =link_to edit_user_path(current_user) do
