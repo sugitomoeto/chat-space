@@ -11,8 +11,10 @@
 
   .side__bottom
     .side__bottom__group
-      .side__bottom__group-name
-        もーもー小隊
+      - current_user.groups.each do |group|
+        = link_to group_messages_path(group) do
+          .side__bottom__group-name
+            = group.name
 
-      .side__bottom__group-message
-        まだメッセージはありません。
+          .side__bottom__group-message
+            まだメッセージはありません。
