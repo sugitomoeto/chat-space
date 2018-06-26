@@ -1,7 +1,9 @@
 .main__header__left
   .main__header__left__group-name
-    もーもー小隊
+    = @group.name
   .main__header__left__members
-    Members: モーモ
+    Members:
+    - @group.group_users.each do |group_user|
+      = group_user.user.name
 .main__header__right
   = link_to 'Edit', class: "group-edit"
