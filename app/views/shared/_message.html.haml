@@ -1,7 +1,10 @@
 .main__middle__messages
   .main__middle__messages__user-name
-    モーモ
+    = message.user.name
   .main__middle__messages__posted-time
-    2018/06/13/ 00:00:00
+    = message.created_at
   .main__middle__messages__content
-    ンモンモンモンモンモ
+    - if message.content.present?
+      = message.content
+
+    = image_tag message.image.url if message.image.present?
