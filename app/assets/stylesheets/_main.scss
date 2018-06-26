@@ -45,6 +45,7 @@
       height: calc(100vh - 100px - 90px - 46px);
       padding: 46px 40px 0;
       background-color: $less_gray;
+      overflow: auto;
 
       &__messages {
         padding-bottom: 46px;
