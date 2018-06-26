@@ -1,9 +1,8 @@
-.main__bottom__form
-  .main__bottom__form__text
-    = text_field :message, :text, placeholder: "type a message", class: "text"
-  %label.main__bottom__form__image
-    = fa_icon("image")
-    %input{type: "file", id: "file"}
-
-.main__bottom__send
-  %input{type: "submit", value: "Send", class: "main__bottom__send"}
+.form
+  = form_for [@group, @message] do |f|
+    = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+    .form__mask
+      = f.label :image, class: 'form__mask__image' do
+        = fa_icon 'picture-o', class: 'icon'
+        = f.file_field :image, class: 'hidden'
+    = f.submit 'Send', class: 'form__submit'
