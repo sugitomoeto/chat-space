@@ -59,3 +59,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
   gem 'rails-i18n'
   gem 'carrierwave'
   gem 'mini_magick'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails', "~> 4.4.1"
+  gem 'rails-controller-testing'
+  gem 'faker'
