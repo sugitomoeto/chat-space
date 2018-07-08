@@ -42,6 +42,9 @@ $(function(){
       middle.animate({scrollTop: middle[0].scrollHeight},'fast');
       $this.get(0).reset();
     })
+    .fail(function(){
+      alert('メッセージが送られていません〜〜');
+    })
     return false;
   });
 });
