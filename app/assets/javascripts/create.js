@@ -23,7 +23,6 @@ $(function(){
 
   $('#new_message').on("submit", function(e){
     e.preventDefault();
-    console.log("waa");
     var $this = $(this);
     var formData = new FormData($this.get(0));
     var url = $(this).attr('action');
@@ -43,7 +42,7 @@ $(function(){
       $this.get(0).reset();
     })
     .fail(function(){
-      alert('メッセージが送られていません〜〜');
+      alert('メッセージが送られていません。');
     })
     return false;
   });
