@@ -1,4 +1,5 @@
 $(function(){
+  var middle = $(".main__middle")
 
   function buildHTML(message){
     var img = message.image.url ? `<img src= ${message.image.url}>` : "";
@@ -19,6 +20,10 @@ $(function(){
     return html;
   }
 
+  function scrollDown(place){
+    place.animate({scrollTop: middle[0].scrollHeight},'fast');
+  }
+
   $('#new_message').on("submit", function(e){
     e.preventDefault();
     var $this = $(this);
@@ -33,10 +38,8 @@ $(function(){
       contentType: false
     })
     .done(function(message){
-      var html = buildHTML(message);
-      var middle = $(".main__middle")
-      middle.append(html);
-      middle.animate({scrollTop: middle[0].scrollHeight},'fast');
+      middle.append(buildHTML(message));
+      scrollDown(middle)
       $this.get(0).reset();
     })
     .fail(function(){
