@@ -2,7 +2,7 @@ $(function(){
   var middle = $(".main__middle")
 
   function buildHTML(message){
-    var img = message.image.url ? `<img src= ${message.image.url}>` : "";
+    var img = message.image ? `<img src= ${message.image}>` : "";
     var html = `<div class="main__middle__messages">
                   <div class="main__middle__messages__user-name">
                     ${ message.name }
