@@ -26,8 +26,7 @@ $(function(){
 
   $('#new_message').on("submit", function(e){
     e.preventDefault();
-    var $this = $(this);
-    var formData = new FormData($this.get(0));
+    var formData = new FormData(this);
     var url = $(this).attr('action');
     $.ajax({
       url: url,
@@ -40,7 +39,8 @@ $(function(){
     .done(function(message){
       middle.append(buildHTML(message));
       scrollDown(middle)
-      $this.get(0).reset();
+      $('.form__message').val("");
+      $('.hidden').val("");
     })
     .fail(function(){
       alert('メッセージが送られていません。');
