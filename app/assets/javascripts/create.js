@@ -1,5 +1,4 @@
 $(function(){
-  var middle = $(".main__middle")
 
   function buildHTML(message){
     var img = message.image ? `<img src= ${message.image}>` : "";
@@ -21,7 +20,7 @@ $(function(){
   }
 
   function scrollDown(place){
-    place.animate({scrollTop: middle[0].scrollHeight},'fast');
+    place.animate({scrollTop: $('.main__middle')[0].scrollHeight},'fast');
   }
 
   $('#new_message').on("submit", function(e){
@@ -37,10 +36,10 @@ $(function(){
       contentType: false
     })
     .done(function(message){
-      middle.append(buildHTML(message));
-      scrollDown(middle)
+      $('.main__middle').append(buildHTML(message));
       $('.form__message').val("");
       $('.hidden').val("");
+      scrollDown($('.main__middle'))
     })
     .fail(function(){
       alert('メッセージが送られていません。');
