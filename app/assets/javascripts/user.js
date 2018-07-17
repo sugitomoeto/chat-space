@@ -3,7 +3,7 @@ $(function(){
   function appendUser(user) {
     var html = `<div class="chat-group-user clearfix">
                   <p class="chat-group-user__name">${ user.name }</p>
-                  <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${ user.id }" data-user-name="${ user.name }">追加</a>
+                  <a class="user-search-add chat-group-user__btn chat-group-user__btn--add js-add-btn" data-user-id="${ user.id }" data-user-name="${ user.name }">追加</a>
                 </div>`
     return html;
   }
@@ -37,14 +37,14 @@ $(function(){
     return false;
   });
 // チャットメンバーを追加
-  $("#user-search-result").on("click", ".chat-group-user__btn--add", function(){
+  $("#user-search-result").on("click", ".js-add-btn", function(){
     var id = $(this).data("user-id");
     var name = $(this).data("user-name");
     $("#chat-group-users").append(appendMember(id, name));
     $(this).parent().remove();
   })
 // チャットメンバーを削除
-  $("#chat-group-users").on("click", ".user-search-remove", function(){
+  $("#chat-group-users").on("click", ".js-remove-btn", function(){
     $(this).parent().remove();
   })
 });
