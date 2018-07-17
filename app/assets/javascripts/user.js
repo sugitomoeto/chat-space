@@ -1,7 +1,7 @@
 $(function(){
 // ユーザーを検索のHTML作成
   function appendUser(user) {
-    var html = `<div class="chat-group-user clearfix">
+    var html = `<div class="chat-group-user js-group-user clearfix">
                   <p class="chat-group-user__name">${ user.name }</p>
                   <a class="user-search-add chat-group-user__btn chat-group-user__btn--add js-add-btn" data-user-id="${ user.id }" data-user-name="${ user.name }">追加</a>
                 </div>`
@@ -38,7 +38,7 @@ $(function(){
       })
     }
     else {
-      $(".chat-group-user").remove();
+      $(".js-group-user").remove();
     }
   })
 // チャットメンバーを追加
@@ -52,4 +52,5 @@ $(function(){
   $("#chat-group-users").on("click", ".js-remove-btn", function(){
     $(this).parent().remove();
   })
+  return false;
 });
