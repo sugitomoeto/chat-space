@@ -19,23 +19,28 @@ $(function(){
 // ユーザーを検索
   $("#user-search-field").on("keyup", function(){
     var input = $("#user-search-field").val();
-    $.ajax({
-      url: '/users',
-      type: 'GET',
-      data: { name: input },
-      dataType: 'json'
-    })
-    .done(function(users) {
-      $("#user-search-result").empty();
-      users.forEach(function(user){
-      $("#user-search-result").append(appendUser(user));
-      });
-    })
-    .fail(function(){
-      alert("ユーザー検索に失敗しました");
-    })
-    return false;
-  });
+    if (input.length !== 0) {
+      console.log("a");
+      $.ajax({
+        url: '/users',
+        type: 'GET',
+        data: { name: input },
+        dataType: 'json'
+      })
+      .done(function(users) {
+        $("#user-search-result").empty();
+        users.forEach(function(user){
+          $("#user-search-result").append(appendUser(user));
+        })
+      })
+      .fail(function(){
+        alert('ユーザー検索に失敗しました')
+      })
+    }
+    else {
+      $(".chat-group-user").remove();
+    }
+  })
 // チャットメンバーを追加
   $("#user-search-result").on("click", ".js-add-btn", function(){
     var id = $(this).data("user-id");
