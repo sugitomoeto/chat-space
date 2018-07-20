@@ -6,4 +6,4 @@
     - @group.group_users.each do |group_user|
       = group_user.user.name
 .main__header__right
-  = link_to 'Edit', class: "group-edit"
+  = link_to 'Edit',  edit_group_path(@group), class: "group-edit"
