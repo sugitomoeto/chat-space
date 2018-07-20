@@ -20,7 +20,6 @@ $(function(){
   $("#user-search-field").on("keyup", function(){
     var input = $("#user-search-field").val();
     if (input.length !== 0) {
-      console.log("a");
       $.ajax({
         url: '/users',
         type: 'GET',
