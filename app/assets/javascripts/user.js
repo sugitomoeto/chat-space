@@ -8,7 +8,7 @@ $(function(){
     return html;
   }
 // チャットメンバーを追加のHTML作成
-  function appendMember(id,name) {
+  function addUser(id, name) {
     var html = `<div class="chat-group-user clearfix js-chat-member" id="chat-group-user-${ id }">
                   <input name="group[user_ids][]" type="hidden" value="${ id }">
                   <p class="chat-group-user__name">${ name }</p>
@@ -44,7 +44,7 @@ $(function(){
   $("#user-search-result").on("click", ".js-add-btn", function(){
     var id = $(this).data("user-id");
     var name = $(this).data("user-name");
-    $("#chat-group-users").append(appendMember(id, name));
+    $("#chat-group-users").append(addUser(id, name));
     $(this).parent().remove();
   })
 // チャットメンバーを削除
