@@ -49,28 +49,26 @@ $(function(){
 
   var interval = setInterval(function(){
     if (window.location.pathname.match(/\/groups\/\d+\/messages/)) {
+      var lastId = $('.main__middle__messages').last().data('message-id');
         $.ajax({
           url: location.pathname,
           type: "GET",
+          data:{ id: lastId },
           dataType: 'json',
-          processData: false,
-          contentType: false,
+          contentType: false
         })
         .done(function(json){
-          var id = $('.main__middle__messages').last().data('messageId')
           var insertHTML = '';
           json.messages.forEach(function(message){
-            if (message.id > id){
-              insertHTML = buildHTML(message)
-            }
+            insertHTML = buildHTML(message)
+            scrollDown($('.main__middle'))
           })
           $('.main__middle').append(insertHTML)
-          scrollDown($('.main__middle'))
         })
         .fail(function(){
           alert('メッセージが取得出来ませんでした。');
         })
-      }
+    }
     else {
       clearInterval(interval)
     }
