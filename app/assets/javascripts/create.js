@@ -2,7 +2,7 @@ $(function(){
 
   function buildHTML(message){
     var img = message.image ? `<img src= ${ message.image }>` : "";
-    var html = `<div class="main__middle__messages" data-massege="${ message.id }">
+    var html = `<div class="main__middle__messages" data-massege-id="${ message.id }">
                   <div class="main__middle__messages__user-name">
                     ${ message.name }
                   </div>
@@ -57,7 +57,7 @@ $(function(){
           contentType: false,
         })
         .done(function(json){
-          var id = $('.main__middle__messages').last().data('message')
+          var id = $('.main__middle__messages').last().data('messageId')
           var insertHTML = '';
           json.messages.forEach(function(message){
             if (message.id > id){
