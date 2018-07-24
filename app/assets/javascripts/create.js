@@ -1,16 +1,16 @@
 $(function(){
 
   function buildHTML(message){
-    var img = message.image ? `<img src= ${message.image}>` : "";
-    var html = `<div class="main__middle__messages">
+    var img = message.image ? `<img src= ${ message.image }>` : "";
+    var html = `<div class="main__middle__messages" data-massege-id="${ message.id }">
                   <div class="main__middle__messages__user-name">
                     ${ message.name }
                   </div>
                   <div class="main__middle__messages__posted-time">
-                    ${ message.created_at}
+                    ${ message.created_at }
                   </div>
                   <div class="main__middle__messages__content">
-                    ${ message.content}
+                    ${ message.content }
                   </div>
                   <div class="main__middle__messages__content">
                     ${ img }
@@ -46,4 +46,31 @@ $(function(){
     })
     return false;
   });
+
+  var interval = setInterval(function(){
+    if (window.location.pathname.match(/\/groups\/\d+\/messages/)) {
+      var lastId = $('.main__middle__messages').last().data('message-id');
+        $.ajax({
+          url: location.pathname,
+          type: "GET",
+          data:{ id: lastId },
+          dataType: 'json',
+          contentType: false
+        })
+        .done(function(messages){
+          var insertHTML = ''
+          messages.forEach(function(message){
+            insertHTML = buildHTML(message)
+            scrollDown($('.main__middle'))
+          })
+          $('.main__middle').append(insertHTML)
+        })
+        .fail(function(){
+          alert('メッセージが取得出来ませんでした。');
+        })
+    }
+    else {
+      clearInterval(interval)
+    }
+  }, 5000 );
 });
