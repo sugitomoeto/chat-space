@@ -57,9 +57,9 @@ $(function(){
           dataType: 'json',
           contentType: false
         })
-        .done(function(json){
-          var insertHTML = '';
-          json.messages.forEach(function(message){
+        .done(function(messages){
+          var insertHTML = ''
+          messages.forEach(function(message){
             insertHTML = buildHTML(message)
             scrollDown($('.main__middle'))
           })
